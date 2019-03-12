@@ -10,3 +10,7 @@ Theta client for javascript.
 ## Theta Client API
 
 ### HTTP API
+
+### API Reference(TypeDoc)
+
+ https://goroya.github.io/theta-api-client.js/
