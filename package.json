@@ -1,0 +1,77 @@
+{
+  "name": "@goroya.io/theta-api-client",
+  "version": "0.0.1",
+  "description": "Theta client for javascript.",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepublish": "npm run build && npm run docs",
+    "start": "npm run build && node dist/index.js",
+    "build": "npm run tslint_fix && npm run build-ts",
+    "tslint_fix": "tslint --fix ./src/**/*",
+    "build-ts": "tsc",
+    "docs": "typedoc --out ./docs/ ./src/ && nodetouch docs/.nojekyll",
+    "docs_ope": "npm run docs && opn docs/index.html",
+    "test": "jest --notify --coverage",
+    "example:node": "node example"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goroya/Theta-api-client.js"
+  },
+  "keywords": [
+    "theta",
+    "http",
+    "node"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "author": "goroya.io",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/goroya/Theta-api-client.js/issues"
+  },
+  "homepage": "https://github.com/goroya/Theta-api-client.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "blueimp-md5": "^2.10.0",
+    "eventemitter3": "^3.1.0"
+  },
+  "typings": "./dist/index.d.ts",
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/app-root-path": "^1.2.4",
+    "@types/axios": "^0.14.0",
+    "@types/blueimp-md5": "^2.7.0",
+    "@types/debug": "^4.1.2",
+    "@types/dotenv": "^6.1.0",
+    "@types/jest": "^24.0.11",
+    "@types/loglevel": "^1.5.4",
+    "@types/noble": "0.0.39",
+    "@types/node": "^11.10.4",
+    "@types/request-promise": "^4.1.42",
+    "@types/superagent": "^4.1.0",
+    "@types/w3c-web-usb": "^1.0.3",
+    "@types/web-bluetooth": "0.0.4",
+    "app-root-path": "^2.1.0",
+    "dotenv": "^6.2.0",
+    "jest": "^24.1.0",
+    "karma": "^4.0.1",
+    "nodemon": "^1.18.10",
+    "opn-cli": "^4.0.0",
+    "prettier": "^1.16.4",
+    "touch": "^3.1.0",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.13.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.3.3333"
+  }
+}

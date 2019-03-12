@@ -1,0 +1,18 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended",
+        "tslint-config-prettier"
+    ],
+    "jsRules": {},
+    "rules": {
+        "prettier": true,
+        "no-empty-interface": false,
+        "object-literal-sort-keys": false,
+        "variable-name": [ true, "check-format", "allow-leading-underscore", "allow-pascal-case" ],
+        "linebreak-style": [ true, "LF" ]
+    },
+    "rulesDirectory": [
+        "tslint-plugin-prettier"
+    ]
+}
