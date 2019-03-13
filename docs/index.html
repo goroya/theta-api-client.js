@@ -62,13 +62,49 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="theta-client-js">theta-client-js</h1>
+				<h1 id="theta-api-client-js">theta-api-client.js</h1>
 				<p>Theta client for javascript.</p>
+				<h1 id="supported-platforms">Supported Platforms</h1>
+				<ul>
+					<li>Node.js</li>
+					<li>React Native</li>
+				</ul>
 				<h2 id="installing">Installing</h2>
+				<pre><code class="language-bash">$ npm install @goroya.io/theta-api-client --save</code></pre>
 				<h2 id="example">Example</h2>
 				<h3 id="http-example">HTTP Example</h3>
+				<h3 id="node-js-example">Node.js Example</h3>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> {ThetaHttpClient} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@goroya.io/theta-api-client'</span>);
+
+<span class="hljs-function">(<span class="hljs-params"><span class="hljs-keyword">async</span> (</span>) =&gt;</span> {
+  <span class="hljs-keyword">this</span>.thetaClient = <span class="hljs-keyword">new</span> ThetaHttpClient({
+    <span class="hljs-attr">hostname</span>: <span class="hljs-string">'192.168.1.1'</span>,
+    <span class="hljs-attr">axiosConfig</span>: {},
+    <span class="hljs-attr">auth</span>: { <span class="hljs-attr">user</span>: <span class="hljs-string">'THETAYLxxxxxxxx'</span>, <span class="hljs-attr">pass</span>: <span class="hljs-string">'xxxxxxxx'</span> }
+  });
+  <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.thetaClient
+    .cameraTakePicture({
+      <span class="hljs-attr">timeout</span>: <span class="hljs-number">3000</span>
+    })
+    .catch(<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+      <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'error:'</span>, e);
+    });
+})();</code></pre>
+				<h3 id="es-modules-typescript-react-native">ES Modules &amp; TypeScript &amp; React Native</h3>
+				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { ThetaHttpClient } <span class="hljs-keyword">from</span> <span class="hljs-string">'@goroya.io/theta-api-client'</span>;
+
+<span class="hljs-keyword">this</span>.thetaClient = <span class="hljs-keyword">new</span> ThetaHttpClient({
+  <span class="hljs-attr">hostname</span>: <span class="hljs-string">'192.168.1.1'</span>,
+  <span class="hljs-attr">axiosConfig</span>: {},
+  <span class="hljs-attr">auth</span>: { <span class="hljs-attr">user</span>: <span class="hljs-string">'THETAYLxxxxxxxx'</span>, <span class="hljs-attr">pass</span>: <span class="hljs-string">'xxxxxxxx'</span> }
+});
+<span class="hljs-function">(<span class="hljs-params"><span class="hljs-keyword">async</span> (</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> ret = <span class="hljs-keyword">await</span> thetaClient.cameraTakePicture();
+})();</code></pre>
 				<h2 id="theta-client-api">Theta Client API</h2>
 				<h3 id="http-api">HTTP API</h3>
+				<h3 id="typedoc-document">TypeDoc Document</h3>
+				<p><a href="https://goroya.github.io/theta-api-client.js/classes/thetahttpclient.html">https://goroya.github.io/theta-api-client.js/classes/thetahttpclient.html</a></p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

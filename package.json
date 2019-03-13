@@ -1,6 +1,6 @@
 {
   "name": "@goroya.io/theta-api-client",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Theta client for javascript.",
   "main": "dist/index.js",
   "scripts": {
