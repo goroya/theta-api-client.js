@@ -1,29 +1,48 @@
 import { ThetaHttpClient } from '@goroya.io/theta-api-client';
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
-export default class App extends React.Component {
+export default class App extends React.Component<any, any> {
   private thetaClient: ThetaHttpClient;
   constructor(props: Readonly<{}>) {
     super(props);
+    this.state = { thetaIP: '192.168.1.1' };
     this.thetaClient = new ThetaHttpClient({
-      hostname: '192.168.100.18',
+      hostname: '192.168.1.1',
       axiosConfig: {},
-      auth: { user: 'THETAYL00106013', pass: '00106013' }
+      auth: { user: 'THETAYLxxxxxxxx', pass: 'xxxxxxxx' }
     });
-    this.onPressLearnMore.bind(this);
+    this.onPressTakePicture = this.onPressTakePicture.bind(this);
   }
-  public async onPressLearnMore() {
-    console.log('Push');
-    console.log();
-    await this.thetaClient.cameraTakePicture();
+  public async onPressTakePicture() {
+    console.log("take start");
+    await this.thetaClient
+      .cameraTakePicture({
+        baseURL: `http://${this.state.thetaIP}`,
+        timeout: 3000
+      })
+      .catch(e => {
+        console.error('error:', e);
+      });
+    console.log("take stop");
   }
   public render() {
     return (
       <View style={styles.container}>
         <Text>Theta Example</Text>
+        <TextInput
+          style={{
+            height: 40,
+            width: 150,
+            borderColor: 'gray',
+            borderWidth: 1,
+            textAlign: 'center'
+          }}
+          onChangeText={thetaIP => this.setState({ thetaIP })}
+          value={this.state.thetaIP}
+        />
         <Button
-          onPress={this.onPressLearnMore}
+          onPress={this.onPressTakePicture}
           title="Take a Picture"
           color="#841584"
         />
