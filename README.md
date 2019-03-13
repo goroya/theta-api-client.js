@@ -12,7 +12,7 @@ Theta client for javascript.
 $ npm install @goroya.io/theta-api-client --save
 ```
 
-## Example
+## Quick Start
 
 ### HTTP Example
 
@@ -50,6 +50,26 @@ this.thetaClient = new ThetaHttpClient({
   const ret = await thetaClient.cameraTakePicture();
 })();
 ```
+
+# Example
+
+## Node.js
+
+Please check following codes.  
+https://github.com/goroya/theta-api-client.js/tree/master/example/node/take-picture-example
+
+## React Native
+
+Please check following codes.  
+https://github.com/goroya/theta-api-client.js/tree/master/example/react-native/theta-example
+
+## Demo
+### Expo(React Native)
+
+Please visit following url.  
+And Scan QR code using Expo App.
+
+https://expo.io/@goroya/theta-example
 
 ## Theta Client API
 
