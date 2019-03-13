@@ -1,0 +1,14 @@
+{
+  "name": "@goroya.io/take-picture-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "@goroya.io/theta-api-client": "*"
+  },
+  "author": "",
+  "license": "ISC"
+}
